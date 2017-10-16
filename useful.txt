@@ -1,6 +1,55 @@
 https://www.youtube.com/watch?v=O_0gZuqW6y8
+https://www.youtube.com/watch?v=oK_NzdVSxaQ
 
 
 david says modify drag for gliding. increase drag when gliding, lower it to normal when back on ground
 also use fixedupdate in unity instead of update
 
+
+new jumping::::
+
+vector2 jumpForce;
+Jumpstrength = new vector2(0, jumpstrength)
+
+for jump, use rigidbody.addforce(jumpForce)
+
+
+forcemode velocity change can be used to help, as it ignores mass
+(maybe use this for gliding?)
+
+
+
+do not raw make camera child of player, use script
+use lerping for camera
+
+::::camera controller script::::
+
+serializedfield
+transform objecttofollow
+
+ser
+float yoffset
+
+ser 
+float xoffset
+
+float zoffset = -10
+
+float camerafollowspeed = 2; //for example
+
+void update
+{
+
+vector3 newPos = new vector3(objectofollow.position.x + xoffset, objecttofollow.position.y + yoffset, zoffset)
+
+//tranform.position = newPos;
+tranform.position = vector3.lerp(transform.position, newPos, camerafollowspeed * time.deltatime)
+
+}
+
+
+// check to see which direction sprite faces. 
+// have camera offset change to match direction faced/moving
+
+
+// set rigidbody on player to interpolate = enabled
