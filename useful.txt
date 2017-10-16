@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=O_0gZuqW6y8
+
+
+david says modify drag for gliding. increase drag when gliding, lower it to normal when back on ground
+also use fixedupdate in unity instead of update
+
